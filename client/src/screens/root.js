@@ -1,15 +1,28 @@
-
-import React, { Component } from 'react';
-import { Router } from 'react-router';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Home from './Home';
 
 const ScreensRoot = () => (
   <Router>
-    <Switch>
-      <Route path="/user/list" component={ScreensUserList} />
-      <Route path="/user/create" component={ScreensUserForm} />
-      <Route path="/user/:id" component={ScreensUserForm} />
-    </Switch>
+    <div>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about/">About</Link>
+          </li>
+          <li>
+            <Link to="/users/">Users</Link>
+          </li>
+        </ul>
+      </nav>
+
+      <Route path="/" exact component={Home} />
+      {/* <Route path="/about/" component={About} />
+      <Route path="/users/" component={Users} /> */}
+    </div>
   </Router>
 );
 
