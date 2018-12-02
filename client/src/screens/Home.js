@@ -8,8 +8,8 @@ class Home extends Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    const items = AuctionItemApi.all();
+  async componentDidMount() {
+    const items = await AuctionItemApi.all();
     this.setState({
       items
     });
@@ -18,7 +18,7 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <ItemList items={this.state.items} />
+        {this.state.items && <ItemList items={this.state.items} />}
       </div>
     );
   }

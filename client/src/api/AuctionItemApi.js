@@ -1,17 +1,15 @@
 const AuctionItemApi = {
-  items: [
-    { id: '1', name: '111', endTime: '2019-01-01T19:20+11:00' },
-    { id: '2', name: '222', endTime: '2019-01-01T19:20+11:00' },
-    { id: '3', name: '333', endTime: '2019-01-01T19:20+11:00' },
-    { id: '4', name: '444', endTime: '2019-01-01T19:20+11:00' },
-    { id: '5', name: '555', endTime: '2019-01-01T19:20+11:00' },
-    { id: '6', name: '666', endTime: '2019-01-01T19:20+11:00' }
-  ],
-  all: function() {
-    return this.items;
+  all: async () => {
+    const response = await fetch('/api/item/all');
+    const body = await response.json();
+    if (response.status !== 200) throw Error(body.message);
+    return body;
   },
-  get: function(id) {
-    return this.items.find(item => item.id === id);
+  get: async id => {
+    const response = await fetch(`/api/item/${id}`);
+    const body = await response.json();
+    if (response.status !== 200) throw Error(body.message);
+    return body;
   }
 };
 

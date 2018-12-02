@@ -1,0 +1,23 @@
+.auction-item-list {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.auction-item-list-title {
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+
+.auction-item-list-title span:last-of-type {
+  color: #666;
+  font-weight: normal;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.auction-item-list {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
