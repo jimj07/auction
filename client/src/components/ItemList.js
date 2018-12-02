@@ -6,14 +6,14 @@ const ItemList = ({ items }) => {
   return (
     <div className="auction-item-list">
       {items.map(item => (
-        <Item key={`item-${item.id}`} name={item.name} />
+        <Item key={`item-${item.id}`} name={item.name} id={item.id} />
       ))}
     </div>
   );
 };
 
 ItemList.propTypes = {
-  items: PropTypes.arrayOf(Item.propTypes)
+  items: PropTypes.arrayOf(PropTypes.shape(Item.propTypes))
 };
 
 ItemList.defaultProps = {

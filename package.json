@@ -5,12 +5,14 @@
     "client:start": "cd client && react-scripts start",
     "client:build": "cd client && react-scripts build",
     "client:test": "cd client && react-scripts test",
+    "watch": "npm-watch",
     "prestart": "npm run client:build",
-    "start": "NODE_ENV=production node server/src/server.js"
+    "start": "NODE_ENV=production node src/server.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "npm-watch": "^0.5.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
@@ -29,5 +31,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "watch": {
+    "client:start": "client/src"
+  }
 }

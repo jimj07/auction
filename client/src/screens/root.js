@@ -1,27 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Header from '../components/Header';
 import Home from './Home';
+import ItemDetails from './ItemDetails';
 
 const ScreensRoot = () => (
   <Router>
     <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about/">About</Link>
-          </li>
-          <li>
-            <Link to="/users/">Users</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <Route path="/" exact component={Home} />
-      {/* <Route path="/about/" component={About} />
-      <Route path="/users/" component={Users} /> */}
+      <Header />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path={'/item/:id'} component={ItemDetails} />
+      </Switch>
     </div>
   </Router>
 );

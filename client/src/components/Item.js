@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Item = ({ id, name }) => {
   return (
-    <div className="auction-item-card">
-      <h3>
-        Item: {id} - {name}
-      </h3>
-    </div>
+    <Link className="auction-item-card" to={`/item/${id}`}>
+      <h3>{name}</h3>
+    </Link>
   );
 };
 
