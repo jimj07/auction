@@ -16,7 +16,16 @@ const get = async id => {
     .value();
 };
 
+const setPrice = async (id, price) => {
+  return await db
+    .get('items')
+    .find({ id })
+    .assign({ price })
+    .write();
+};
+
 module.exports = {
   get,
-  getAll
+  getAll,
+  setPrice
 };

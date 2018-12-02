@@ -1,19 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import Countdown from 'react-countdown-now';
+import Countdown from './CountDown';
 import './Item.css';
 
-const Item = ({ id, name, currentPrice, imageSrc, endTime }) => {
+const Item = ({ id, name, price, imageSrc, endTime }) => {
   return (
     <Link className="auction-item-card" to={`/item/${id}`}>
-      <div className="autction-time-left">
-        <Countdown date={endTime}>
-          <h2>Finished</h2>
-        </Countdown>
-      </div>
+      <Countdown endTime={endTime} />
       <img className="auction-item-img" src={imageSrc} alt={`item ${name}`} />
-      <p className="auction-item-price">${currentPrice}</p>
+      <p className="auction-item-price">${price}</p>
       <h3 className="auction-item-name">{name}</h3>
     </Link>
   );
