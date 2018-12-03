@@ -4,7 +4,7 @@
   "scripts": {
     "client:start": "cd client && react-scripts start",
     "client:build": "cd client && react-scripts build",
-    "client:test": "cd client && react-scripts test",
+    "client:test": "cd client && react-scripts test --verbose=false",
     "watch": "npm-watch",
     "prestart": "npm run client:build",
     "start": "NODE_ENV=production node app.js"
@@ -25,7 +25,12 @@
     "socket.io-client": "^2.2.0"
   },
   "devDependencies": {
-    "concurrently": "^4.0.1"
+    "concurrently": "^4.0.1",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "proxyquire": "^2.1.0",
+    "react-test-renderer": "^16.6.3",
+    "sinon": "^7.1.1"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,5 +43,8 @@
   ],
   "watch": {
     "client:start": "client/src"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
   }
 }

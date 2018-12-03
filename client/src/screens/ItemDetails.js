@@ -54,9 +54,8 @@ class ItemDetails extends Component {
   handleBidClick = increment => {
     return () => {
       const { item } = this.state;
-      console.log(item, this.socket);
       if (item && this.socket) {
-        this.socket.emit(`biditem`, {
+        this.socket.emit('biditem', {
           id: item.id,
           price: item.price + increment
         });
@@ -71,7 +70,7 @@ class ItemDetails extends Component {
     }
 
     return (
-      <div className="detail-wrapper">
+      <div className="auction-item-details-container">
         <Link to="/" className="btn">
           Back
         </Link>
@@ -101,6 +100,7 @@ class ItemDetails extends Component {
                 <form className="auction-item-bidding-action">
                   {[10, 50, 100].map(increment => (
                     <button
+                      key={`bidding-button-${increment}`}
                       className="auction-item-bidding-button btn"
                       onClick={this.handleBidClick(increment)}
                     >
