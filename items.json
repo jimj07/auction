@@ -3,7 +3,7 @@
     {
       "id": "1",
       "name": "Apple MacBook Pro 13\" 2018 8GB RAM 2.3GHz i5 Processor 512GB Storage ",
-      "price": 830,
+      "price": 900,
       "endTime": "2019-01-01T00:00:00+11:00",
       "imageSrc": "http://static.livedemo00.template-help.com/wt_53883/img/page1_pic5.jpg"
     },
@@ -17,15 +17,15 @@
     {
       "id": "3",
       "name": "Excepteur sint occaecat cupidatat non",
-      "price": 1450,
-      "endTime": "2018-12-06T00:00:00+11:00",
+      "price": 1680,
+      "endTime": "2018-12-07T00:00:00+11:00",
       "imageSrc": "http://livedemo00.template-help.com/wt_53883/img/page1_pic7.jpg"
     },
     {
       "id": "4",
       "name": "Excepteur sint occaecat cupidatat non",
       "price": 170,
-      "endTime": "2018-12-05T12:00:00+11:00",
+      "endTime": "2018-12-06T12:00:00+11:00",
       "imageSrc": "http://livedemo00.template-help.com/wt_53883/img/page1_pic8.jpg"
     }
   ]
